@@ -1,5 +1,5 @@
 <script setup >
-import { ref, reactive, onMounted , computed} from 'vue'
+import { ref, reactive, onMounted, computed } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 
 import { useBookStore } from '../stores/book'
@@ -32,36 +32,38 @@ onMounted(() => {
 
 const addBook = () => {
 
-    if(mode.value === 'update'){
-        bookStore.editeBook(bookData , bookIndex.value)
-    }else{
-    bookStore.addBook(bookData)
+    if (mode.value === 'update') {
+        bookStore.editeBook(bookData, bookIndex.value)
+    } else {
+        bookStore.addBook(bookData)
 
     }
     router.push({ name: "book-list" })
 }
 
-const displayButton = computed(()=>{
-    if(mode.value === 'create'){
+const displayButton = computed(() => {
+    if (mode.value === 'create') {
         return 'Add'
-    }else{
+    } else {
         return 'Update'
     }
 })
 </script>
 
 <template>
-    Book Update View
     <div>
+        Book Update View
         <div>
-            Book name
-            <input type="text" v-model="bookData.name">
+            <div>
+                Book name
+                <input type="text" v-model="bookData.name">
+            </div>
+            <div>
+                Book author
+                <input type="text" v-model="bookData.author">
+            </div>
+            <button @click="addBook">{{ mode }} book</button>
+            <RouterLink :to="{ name: 'book-list' }">back To booklist</RouterLink>
         </div>
-        <div>
-            Book author
-            <input type="text" v-model="bookData.author">
-        </div>
-        <button @click="addBook">{{mode}} book</button>
-        <RouterLink :to="{ name: 'book-list' }">back To booklist</RouterLink>
     </div>
 </template>
