@@ -1,9 +1,21 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { RouterLink } from 'vue-router'; 
+
+import {useUserStore} from '../stores/user'
+
+const useStore = useUserStore()
+
+
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    Hello home
+  </div>
+  <div>
+       Your profile
+        <div>Firstname {{ useStore.firstname }}</div>
+        <div>Lastname {{ useStore.lastname }}</div>
+        <div>Fullname {{ useStore.fullname }}</div>
+    </div>
 </template>
