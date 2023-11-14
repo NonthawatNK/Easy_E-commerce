@@ -10,7 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterLink to="/profile"> Profile</RouterLink>
     <RouterLink to="/booklist"> Booklist</RouterLink>
     <RouterLink to="/book/create">  BookCreate</RouterLink>
-    <RouterLink to="/todolist"> Todolist</RouterLink>
+    <RouterLink to="/todo"> Todolist</RouterLink>
+    <!-- <RouterLink to="/todolist/edit/">  editeList</RouterLink> -->
     <RouterView />
   </div>
 </template>

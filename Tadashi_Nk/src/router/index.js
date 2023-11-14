@@ -3,7 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import BookListView from '../views/BookListView.vue'
 import BookUpdateView from '../views/BookUpdateView.vue'
-import TodoListView from '../views/TodoListView.vue'
+import TodoHomeView from '../views/TodoHomeView.vue'
+import TodoEditView from '../views/TodoEditView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,14 +36,14 @@ const router = createRouter({
       component: BookUpdateView
     },
     {
-      path:'/todolist',
-      name: 'todolist',
-      component:TodoListView
+      path: '/todo',
+      name: 'todo-list',
+      component: TodoHomeView
     },
     {
-      path:'/todolist/edit/:id',
-      name: 'todolist-edit',
-      component:TodoListView
+      path: '/todo/edit/:id',
+      name: 'todo-edit',
+      component: TodoEditView
     }
 
 
