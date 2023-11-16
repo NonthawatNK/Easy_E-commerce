@@ -9,6 +9,7 @@ const useStore = useUserStore()
 </script>
 
 <template>
+  <div> RouterView</div>
   <div>
     Hello home
   </div>
